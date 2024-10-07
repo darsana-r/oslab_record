@@ -42,12 +42,12 @@ int main()
 		}
 	}
 	
-	//printf("available resource vector\n");
+	//available resource vector
 	for(int i=0;i<nr;i++){
 		avail[i]=erv[i]-pv[i];
 	}
 	
-	//printf("need matrix\n");
+	//need matrix
 	for(int i=0;i<np;i++){
 		for(int j=0;j<nr;j++){
 			need[i][j]=max_m[i][j]-cur[i][j];
@@ -57,7 +57,7 @@ int main()
 	printf("\nMax matrix:\n");
 	for(int i=0;i<np;i++){
 		for(int j=0;j<nr;j++){
-			printf("%d ",max_m[i][j]);
+			printf("%d  ",max_m[i][j]);
 		}
 		printf("\n");
 	}
@@ -65,7 +65,7 @@ int main()
 	printf("\nCurrent allocation matrix:\n");
 	for(int i=0;i<np;i++){
 		for(int j=0;j<nr;j++){
-			printf("%d ",cur[i][j]);
+			printf("%d  ",cur[i][j]);
 		}
 		printf("\n");
 	}
@@ -73,17 +73,19 @@ int main()
 	printf("\nNeed matrix\n");
 	for(int i=0;i<np;i++){
 		for(int j=0;j<nr;j++){
-			printf("%d ",need[i][j]);
+			printf("%d  ",need[i][j]);
 		}printf("\n");			
 	}
 	printf("existing resource vector:\n");
 	for(int i=0;i<nr;i++){
 		printf("%d ",erv[i]);
 	}
+	printf("\n");
 	printf("Possess vector\n");
 	for(int i=0;i<nr;i++){
-		pv[i]=0;
+		printf("%d ",pv[i]);
 	}
+	printf("\n");
 	printf("available resource vector\n");
 	for(int i=0;i<nr;i++){
 		printf("%d ",avail[i]);
@@ -120,8 +122,9 @@ int main()
 		}
 	}
 	if(safe==1){
-		printf("The system is in SAFE state\n");
+		printf("The state is SAFE\n");
+		
 	}else{
-		printf("The system is in UNSAFE state\n");
+		printf("The state is UNSAFE\n");
 	}
 }
